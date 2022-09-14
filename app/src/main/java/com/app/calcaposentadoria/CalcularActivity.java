@@ -2,6 +2,7 @@ package com.app.calcaposentadoria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -39,5 +40,18 @@ public class CalcularActivity extends AppCompatActivity {
                 ((TextView) findViewById(R.id.idCalculo)).setText("Precisa trabalhar " + (20-contribuicao) + " anos!");
             }
         }
+    }
+
+    public void compartilhar(View view){
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_SUBJECT, ("Aposentadoria"));
+        if(sexo == true && idade >= 62 && contribuicao >= 15 || sexo == false && idade >= 65 && contribuicao >= 20){
+            intent.putExtra(Intent.EXTRA_TEXT, (nome + " pode se aposentar pois tem " + idade + " anos de idade e " + contribuicao + " anos de contribuicao!"));
+        } else {
+            intent.putExtra(Intent.EXTRA_TEXT, (nome + " não pode se aposentar pois tem " + idade + " anos de idade e " + contribuicao + " anos de contribuicao!"));
+        }
+        intent.setType("text/plain");
+        startActivity(Intent.createChooser(intent, "Compartilhando com ..."));
     }
 }
