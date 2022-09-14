@@ -7,9 +7,10 @@ import android.view.View;
 import android.widget.TextView;
 
 public class CalcularActivity extends AppCompatActivity {
-    String nome;
-    boolean sexo;
-    int idade, contribuicao;
+    private String nome;
+    private boolean sexo;
+    private int idade, contribuicao;
+    private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,23 +18,25 @@ public class CalcularActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calcular);
 
         nome = getIntent().getStringExtra("nome");
-        sexo = getIntent().getBooleanExtra("F", false);
+        sexo = getIntent().getBooleanExtra("btF", false);
         idade = getIntent().getIntExtra("idade", 0);
         contribuicao = getIntent().getIntExtra("contribuicao", 0);
 
-        ((TextView)findViewById(R.id.idNome).setText(nome));
-        ((TextView)findViewById(R.id.idIdade).setText(idade));
+        ((TextView)findViewById(R.id.idNome)).setText(nome);
+        ((TextView)findViewById(R.id.idIdade)).setText(String.valueOf(idade));
+
+        aposentar();
     }
 
-    public void aposentar(View view){
+    public void aposentar(){
         if (sexo == true && idade >= 62 && contribuicao >= 15 || sexo == false && idade >= 65 && contribuicao >= 20){
-            ((TextView)findViewById(R.id.idMensagem).setText("Pode se aposentar!"));
+            ((TextView)findViewById(R.id.idMensagem)).setText("Pode se aposentar!");
         }else {
-            ((TextView)findViewById(R.id.idMensagem).setText("Ainda não pode se aposentar!"));
+            ((TextView)findViewById(R.id.idMensagem)).setText("Ainda não pode se aposentar!");
             if(sexo == true) {
-                ((TextView) findViewById(R.id.idCalculo).setText("Ainda precisa trabalhar " + (15-contribuicao)));
+                ((TextView) findViewById(R.id.idCalculo)).setText("Precisa trabalhar " + (15-contribuicao) + " anos!");
             } else {
-                ((TextView) findViewById(R.id.idCalculo).setText("Ainda precisa trabalhar " + (20-contribuicao)));
+                ((TextView) findViewById(R.id.idCalculo)).setText("Precisa trabalhar " + (20-contribuicao) + " anos!");
             }
         }
     }
