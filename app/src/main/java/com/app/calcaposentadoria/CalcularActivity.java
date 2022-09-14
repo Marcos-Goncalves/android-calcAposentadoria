@@ -21,8 +21,8 @@ public class CalcularActivity extends AppCompatActivity {
         idade = getIntent().getIntExtra("idade", 0);
         contribuicao = getIntent().getIntExtra("contribuicao", 0);
 
-        ((TextView)findViewById(R.id.idNome).setText("nome"));
-        ((TextView)findViewById(R.id.idIdade).setText("idade"));
+        ((TextView)findViewById(R.id.idNome).setText(nome));
+        ((TextView)findViewById(R.id.idIdade).setText(idade));
     }
 
     public void aposentar(View view){

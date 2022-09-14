@@ -150,9 +150,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
-        android:layout_width="79dp"
-        android:layout_height="49dp"
+        android:id="@+id/idContribuicao"
+        android:layout_width="82dp"
+        android:layout_height="51dp"
         android:layout_marginTop="300dp"
         android:ems="10"
         android:inputType="number"
