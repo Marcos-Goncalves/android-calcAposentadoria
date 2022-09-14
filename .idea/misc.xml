@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="app/src/main/res/layout/activity_calcular.xml" value="0.29257246376811596" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+=======
+        <entry key="..\:/2 - Sources/Android Studio/Projetop1/android-calcAposentadoria/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/2 - Sources/Android Studio/Projetop1/android-calcAposentadoria/app/src/main/res/layout/style.xml" value="0.22826086956521738" />
+>>>>>>> 2ee7f1c25a0e090c5af8fa7a0fee9252a0ac5f0e
       </map>
     </option>
   </component>
