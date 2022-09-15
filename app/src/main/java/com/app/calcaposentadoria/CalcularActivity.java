@@ -29,15 +29,35 @@ public class CalcularActivity extends AppCompatActivity {
         aposentar();
     }
 
+    public void aposentarMulher(){
+        if (idade >= 62 && contribuicao < 15){
+            ((TextView) findViewById(R.id.idCalculo)).setText("Idade ok! Porém precisa trabalhar " + (15-contribuicao) + " anos!");
+        } else if (idade < 62 && contribuicao >= 15){
+            ((TextView) findViewById(R.id.idCalculo)).setText("Contribuição ok! Porém ainda faltam " + (62-idade) + " anos de idade!");
+        } else {
+            ((TextView) findViewById(R.id.idCalculo)).setText("Faltam " + (62-idade) + " anos de idade" + " e " + (15-contribuicao) + " anos de contribuição!");
+        }
+    }
+
+    public void aposentarHomem(){
+        if (idade >= 65 && contribuicao < 20){
+            ((TextView) findViewById(R.id.idCalculo)).setText("Idade ok! Porém precisa trabalhar " + (20-contribuicao) + " anos!");
+        } else if (idade < 65 && contribuicao >= 20){
+            ((TextView) findViewById(R.id.idCalculo)).setText("Contribuição ok! Porém ainda faltam " + (65-idade) + " anos de idade!");
+        } else {
+            ((TextView) findViewById(R.id.idCalculo)).setText("Faltam " + (65-idade) + " anos de idade" + " e " + (20-contribuicao) + " anos de contribuição!");
+        }
+    }
+
     public void aposentar(){
         if (sexo == true && idade >= 62 && contribuicao >= 15 || sexo == false && idade >= 65 && contribuicao >= 20){
             ((TextView)findViewById(R.id.idMensagem)).setText("Pode se aposentar!");
         }else {
             ((TextView)findViewById(R.id.idMensagem)).setText("Ainda não pode se aposentar!");
             if(sexo == true) {
-                ((TextView) findViewById(R.id.idCalculo)).setText("Precisa trabalhar " + (15-contribuicao) + " anos!");
+                aposentarMulher();
             } else {
-                ((TextView) findViewById(R.id.idCalculo)).setText("Precisa trabalhar " + (20-contribuicao) + " anos!");
+                aposentarHomem();
             }
         }
     }
