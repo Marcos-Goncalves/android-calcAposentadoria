@@ -6,24 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
-
     <TextView
         android:id="@+id/idTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-500dp"
         android:fontFamily="sans-serif-black"
-        android:text="Calcular aposentadoria"
-        android:textColor="#AC1111"
+        android:text="@string/calcular_aposentadoria"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,11 +22,11 @@
     <EditText
         android:id="@+id/idNome"
         android:layout_width="312dp"
-        android:layout_height="42dp"
+        android:layout_height="48dp"
         android:layout_marginTop="-300dp"
+        android:autofillHints=""
         android:ems="10"
-        android:textColorHint="@color/black"
-        android:hint="Nome:"
+        android:hint="@string/nome"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,12 +38,14 @@
         android:layout_width="76dp"
         android:layout_height="54dp"
         android:layout_marginTop="-130dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/idTituloIdade"
@@ -62,8 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-200dp"
         android:fontFamily="sans-serif-black"
-        android:text="Idade: "
-        android:textColor="#8F0D03"
+        android:text="@string/idade"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,8 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-5dp"
         android:fontFamily="sans-serif-black"
-        android:text="Sexo"
-        android:textColor="#930A0A"
+        android:text="@string/sexo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,16 +88,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:height="48dp"
             android:fontFamily="sans-serif-medium"
-            android:text="Masculino" />
+            android:minHeight="48dp"
+            android:text="@string/masculino"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
             android:id="@+id/btF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:height="48dp"
             android:fontFamily="sans-serif-medium"
-            android:text="Feminino" />
+            android:minHeight="48dp"
+            android:text="@string/feminino"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </RadioGroup>
 
@@ -122,7 +117,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/male_sex_icon" />
+        app:srcCompat="@mipmap/male_sex_icon"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -134,7 +130,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/female_sex_icon" />
+        app:srcCompat="@mipmap/female_sex_icon"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/idTituloContribuicao"
@@ -142,8 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:fontFamily="sans-serif-black"
-        android:text="Tempo de contribuição:"
-        android:textColor="#9C0A0A"
+        android:text="@string/tempo_de_contribui_o"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -154,27 +150,30 @@
         android:layout_width="82dp"
         android:layout_height="51dp"
         android:layout_marginTop="300dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="109dp"
-        android:layout_height="69dp"
+        android:layout_width="139dp"
+        android:layout_height="84dp"
         android:layout_marginTop="500dp"
         android:backgroundTint="#FFFFFF"
+        android:contentDescription="TODO"
         android:onClick="calcular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.71"
-        app:srcCompat="@mipmap/calculator_math_icon" />
+        app:layout_constraintVertical_bias="0.885"
+        app:srcCompat="@mipmap/calculator_math_icon"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/idTituloCalcular"
@@ -182,8 +181,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="440dp"
         android:fontFamily="sans-serif-black"
-        android:text="Calcular"
-        android:textColor="#980F0F"
+        android:text="@string/calcular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
