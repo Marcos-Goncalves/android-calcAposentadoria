@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CalcularActivity">
+    tools:context=".CalcularActivity"
+    tools:ignore="ExtraText">
 
     <TextView
         android:id="@+id/idNome"
-        android:layout_width="142dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="50dp"
-        android:text="TextView"
+        android:layout_width="340dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_horizontal"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,10 +21,11 @@
 
     <TextView
         android:id="@+id/idIdade"
-        android:layout_width="141dp"
-        android:layout_height="50dp"
+        android:layout_width="75dp"
+        android:layout_height="54dp"
         android:layout_marginTop="50dp"
-        android:text="TextView"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_horizontal"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,10 +33,11 @@
 
     <TextView
         android:id="@+id/idMensagem"
-        android:layout_width="174dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="100dp"
-        android:text="TextView"
+        android:layout_width="246dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_horizontal"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,9 +45,11 @@
 
     <TextView
         android:id="@+id/idCalculo"
-        android:layout_width="173dp"
-        android:layout_height="55dp"
-        android:text="TextView"
+        android:layout_width="255dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_horizontal"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,9 +60,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
+        android:background="#2E2525"
+        android:backgroundTint="#635A5A"
+        android:fontFamily="sans-serif-black"
         android:onClick="compartilhar"
         android:text="Compartilhar"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#F3EAEA"
+        android:textColorHint="#ECB6B6"
+        android:textColorLink="#BAAFAF"
+        app:icon="@android:drawable/ic_menu_share"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#473333" />
+
+    <TextView
+        android:id="@+id/idTituloNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Nome:"
+        app:layout_constraintBottom_toTopOf="@+id/idNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/idIdadeTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="95dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Idade:"
+        android:textColorHighlight="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/idIdade"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idNome"
+        app:layout_constraintVertical_bias="0.523" />
 </androidx.constraintlayout.widget.ConstraintLayout>

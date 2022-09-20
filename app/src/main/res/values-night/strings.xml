@@ -1,6 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CalcAposentadoria</string>
-    <string name="calcular_aposentadoria">Calcular aposentadoria</string>
     <string name="idade">Idade:</string>
     <string name="sexo">Sexo</string>
     <string name="tempo_de_contribui_o">Tempo de contribuição:</string>
